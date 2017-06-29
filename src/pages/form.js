@@ -74,7 +74,15 @@ function mapStateToProps(state) {
 
 const setFavorite = history => (dispatch, getState) => {
 	const favorite = getState().favorite
-	dispatch({ type: APPEND_FAVORITE, payload: favorite })
+	fetch(process.env.REACT_APP_API + '/favorites', {
+		method: 'POST',
+		headers: new Headers({ 'Content-Type': 'application/json' }),
+		body: JSON.stringify(favorite)
+	})
+		.then(res => res.json())
+		.then(favorite => {
+			dispatch({ type: APPEND_FAVORITE, payload: favorite })
+		})
 	dispatch({ type: CLEAR_FAVORITE })
 	history.push('/')
 }

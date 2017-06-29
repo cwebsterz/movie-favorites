@@ -3,11 +3,7 @@ import React from 'react'
 const MovieCard = props =>
 	<div className="db center mw5 black">
 
-		<img
-			className="db ba b--black-10 h3 w2"
-			alt={props.title}
-			src={props.image}
-		/>
+		<img className="db ba b--black-10" alt={props.title} src={props.image} />
 
 		<dl className="mt2 f3 lh-copy">
 			<dt className="clip">Title</dt>
