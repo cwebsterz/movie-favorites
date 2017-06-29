@@ -28,7 +28,7 @@ const Home = function(props) {
 		<div>
 			<Header />
 			<main>
-				<div className="mw6 center mt2 tc">
+				<div className="mw6 center mt2 tc avenir">
 					<List>
 						<SimpleListItem
 							title="Add New Favorite"
